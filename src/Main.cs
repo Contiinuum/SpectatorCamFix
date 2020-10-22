@@ -29,12 +29,18 @@ namespace AudicaModding
 
         public static void FixSpectatorCam()
         {           
-            //yield return new WaitForSeconds(.5f);
             spectatorCamFixed = true;
+
             SpectatorCam cam = GameObject.FindObjectOfType<SpectatorCam>();
+
+            if(cam is null)
+            {
+                MelonModLogger.Log("Spectator cam is disabled.");
+                return;
+            }
+
             cam.cam.enabled = false;
             cam.cam.enabled = true;
-            
         }
        
     }
