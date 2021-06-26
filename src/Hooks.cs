@@ -4,7 +4,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
-using Harmony;
+using HarmonyLib;
 using MelonLoader;
 using UnityEngine;
 using Hmx.Audio;
@@ -13,10 +13,6 @@ namespace AudicaModding
 {
     internal static class Hooks
     {
-        public static void ApplyHooks(HarmonyInstance instance)
-        {
-            instance.PatchAll(Assembly.GetExecutingAssembly());
-        }
 
         /*[HarmonyPatch(typeof(PauseHandler), "HMDMounted")]
         private static class PatchHMDMounted
